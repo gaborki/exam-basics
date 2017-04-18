@@ -36,15 +36,16 @@ The application is accepted if:
 
 #### Your answer:
 [add your answer here]   
-1:   
-2:   
-3:   
-4:   
-5:   
-6:   
-7:   
-8:   
+1: method header   
+2: return type  
+3: method name  
+4: list and type of value(s) passed to the method as a parameter  
+5: parameter's name  
+6: declaring a variable and giving it a value;  
+7: method body   
+8: return value with the return statement  
 
 ### What is the constructor? When it is used? [2p]
 #### Your answer:
-[add your answer here]
+[A constructor in Java is special type of method within a class with no return type and has the name of the class. It is used to initialize an object.
+ It is the blueprint of the Object and it is invoked  when an instance of an object is to be created.]
