@@ -10,15 +10,23 @@ public class OddAvg {
 
   public static void main(String[] args) {
 
-
+    ArrayList<Integer> numbers = new ArrayList<>();
+    for (int i = 0; i < 20; i++) {
+      numbers.add(i);
     }
+    System.out.println(oddAverage(numbers));
+  }
 
-  public static double oddAverage(List<Integer> numbers){
-
-
-    // Create a function called `oddAverage` that takes a list of numbers as parameter
-    // and returns the average value of the odd numbers in the list
-    // Create basic unit tests for it with at least 3 different test cases
+  public static int oddAverage(ArrayList<Integer> numbers) {
+    int sumOfOddNumbers = 0;
+    int count = 0;
+    for (Integer number : numbers) {
+      if (number % 2 == 1) {
+        sumOfOddNumbers += number;
+        count++;
+      }
+    }
+    return sumOfOddNumbers / count;
   }
 }
 
