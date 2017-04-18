@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Created by Gabor on 18/04/2017.
  */
-public class Deck{
+public class Deck {
 
   ArrayList<Card> pack = new ArrayList<>();
   Card drawnCard;
@@ -16,6 +16,30 @@ public class Deck{
   int hearts, diamonds, spades, clubs;
 
   public Deck(int number) {
+    addCards(number);
+    colorCounter(pack);
+    this.currentDeck =
+        number + "cards - " + hearts + " Hearts, " + diamonds + " Diamonds, " + spades + " Spades, "
+            + clubs + " Clubs";
+    System.out.println(currentDeck);
+  }
+
+  public void colorCounter(ArrayList<Card> pack) {
+    hearts = diamonds = spades = clubs = 0;
+    for (Card card : pack) {
+      if (card.color.equals(Card.availableColors[0])) {
+        hearts++;
+      } else if (card.color.equals("Diamonds")) {
+        diamonds++;
+      } else if (card.color.equals("Spades")) {
+        spades++;
+      } else if (card.color.equals("Clubs")) {
+        clubs++;
+      }
+    }
+  }
+
+  public void addCards(int number) {
     pack = new ArrayList<>();
     pack.add(Card.randomCard());
     for (int i = 0; i < number - 1; i++) {
@@ -24,34 +48,11 @@ public class Deck{
         pack.add(newCard);
       } else {
         i--;
-        }
-      }
-    colorCounter(pack);
-    this.currentDeck = number + "cards - " + hearts + " Hearts, " + diamonds + " Diamonds, " + spades + " Spades, " + clubs + " Clubs";
-    System.out.println(currentDeck);
-  }
-
-  public void addCards(int number) {
-
-  }
-
-  public void colorCounter(ArrayList<Card> pack) {
-    hearts = diamonds = spades = clubs = 0;
-    for (Card card : pack){
-      if (card.color.equals(Card.availableColors[0])){
-        hearts++;
-      }else if (card.color.equals("Diamonds")){
-        diamonds++;
-      }else if (card.color.equals("Spades")){
-        spades++;
-      }else if (card.color.equals("Clubs")){
-        clubs++;
       }
     }
   }
 
-
-  public Card draw(){
+  public Card draw() {
     drawnCard = new Card();
     drawnCard = pack.get(pack.size() - 1);
     return drawnCard;
